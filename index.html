@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style type="text/css"></style>
+
+</head>
+
+<body>
+<!--Sprite-->
+<svg style="display: none">
+    <symbol id="search" viewBox="0 0 512 512">
+        <g>
+            <path d="M508.875,493.792L353.089,338.005c32.358-35.927,52.245-83.296,52.245-135.339C405.333,90.917,314.417,0,202.667,0
+			S0,90.917,0,202.667s90.917,202.667,202.667,202.667c52.043,0,99.411-19.887,135.339-52.245l155.786,155.786
+			c2.083,2.083,4.813,3.125,7.542,3.125c2.729,0,5.458-1.042,7.542-3.125C513.042,504.708,513.042,497.958,508.875,493.792z
+			 M202.667,384c-99.979,0-181.333-81.344-181.333-181.333S102.688,21.333,202.667,21.333S384,102.677,384,202.667
+			S302.646,384,202.667,384z"/>
+        </g>
+    </symbol>
+    <symbol id="notice" viewBox="0 0 512 512">
+        <g>
+            <path d="M467.812,431.851l-36.629-61.056c-16.917-28.181-25.856-60.459-25.856-93.312V224c0-67.52-45.056-124.629-106.667-143.04
+			V42.667C298.66,19.136,279.524,0,255.993,0s-42.667,19.136-42.667,42.667V80.96C151.716,99.371,106.66,156.48,106.66,224v53.483
+			c0,32.853-8.939,65.109-25.835,93.291l-36.629,61.056c-1.984,3.307-2.027,7.403-0.128,10.752c1.899,3.349,5.419,5.419,9.259,5.419
+			H458.66c3.84,0,7.381-2.069,9.28-5.397C469.839,439.275,469.775,435.136,467.812,431.851z"/>
+        </g>
+    </symbol>
+    <symbol id="massage"  viewBox="0 0 512 512">
+        <g>
+            <g>
+                <path d="M467,61H45c-6.927,0-13.412,1.703-19.279,4.51L255,294.789l51.389-49.387c0,0,0.004-0.005,0.005-0.007
+			c0.001-0.002,0.005-0.004,0.005-0.004L486.286,65.514C480.418,62.705,473.929,61,467,61z"/>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M507.496,86.728L338.213,256.002L507.49,425.279c2.807-5.867,4.51-12.352,4.51-19.279V106
+			C512,99.077,510.301,92.593,507.496,86.728z"/>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M4.51,86.721C1.703,92.588,0,99.073,0,106v300c0,6.923,1.701,13.409,4.506,19.274L173.789,256L4.51,86.721z"/>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M317.002,277.213l-51.396,49.393c-2.93,2.93-6.768,4.395-10.605,4.395s-7.676-1.465-10.605-4.395L195,277.211
+			L25.714,446.486C31.582,449.295,38.071,451,45,451h422c6.927,0,13.412-1.703,19.279-4.51L317.002,277.213z"/>
+            </g>
+        </g>
+    </symbol>
+
+</svg>
+<div class="wrapper">
+    <header class="header header--fixed">
+
+        <div class="header-logo">
+            <img src="images/logo.png" class="logo-img">
+        </div>
+        <div class="burger-nav">
+            <button class="burger" type="button">
+                <span class="burger__item">Menu </span>
+            </button>
+            <nav class="nav-bar nav-bar--burger">
+
+                <div class="demo">
+                    <input type="checkbox" id="hd-1" class="hide"/>
+                    <label for="hd-1" ><i class="fa fa-laptop"></i>  Dashboard </label>
+                    <div class="sub-menu--title">
+                        UI elements
+                    </div>
+
+                    <input type="checkbox" id="hd-2" class="hide"/>
+                    <label for="hd-2" ><i class="fa fa-cogs"></i> Components</label>
+                    <div class="sub-menu">
+                        <a class="nav--link" href="#"><i class="fa fa-puzzle-piece"></i>Buttons</a>
+                        <a class="nav--link" href="#"><i class="fa fa-id-badge"></i>Badges</a>
+                        <a class="nav--link" href="#"><i class="fa fa-bars"></i>Tabs</a>
+                        <a class="nav--link" href="#"><i class="fa fa-id-card-o"></i>Cards</a>
+                        <a class="nav--link" href="#"><i class="fa fa-exclamation-triangle"></i>Alerts</a>
+                        <a class="nav--link" href="#"><i class="fa fa-spinner"></i>Progress Bars</a>
+                        <a class="nav--link" href="#"><i class="fa fa-fire"></i>Modals</a>
+                        <a class="nav--link" href="#"><i class="fa fa-book"></i>Switches</a>
+                        <a class="nav--link" href="#"><i class="fa fa-th"></i>Grids</a>
+                        <a class="nav--link" href="#"><i class="fa fa-file-word-o"></i>Typography</a>
+                    </div>
+
+                    <input type="checkbox" id="hd-3" class="hide"/>
+                    <label for="hd-3" ><i class=" fa fa-table"></i> Tables</label>
+                    <div class="sub-menu">
+                    <a class="nav--link" href="#"><i class=" fa fa-table"></i> Basic Table</a>
+                    <a class="nav--link" href="#"><i class=" fa fa-table"></i> Data Tables</a>
+                    </div><!--sub-menu-->
+
+                    <input type="checkbox" id="hd-4" class="hide"/>
+                    <label for="hd-4" ><i class=" fa fa-th"></i>Form</label>
+                    <div class="sub-menu">
+                        <a class="nav--link" href="#"><i class=" fa fa-th"></i> Basic Form </a>
+                        <a class="nav--link" href="#"><i class=" fa fa-th"></i>Advanced Form </a>
+                    </div> <!--sub-menu-->
+
+                    <div class="sub-menu--title">
+                        Icons
+                    </div>
+
+                    <input type="checkbox" id="hd-5" class="hide"/>
+                    <label for="hd-5" ><i class=" fa fa-tasks"></i> Icons</label>
+                    <div class="sub-menu">
+                        <a class="nav--link" href="#"><i class=" fa fa-font-awesome"></i> Font Awesome</a>
+                        <a class="nav--link" href="#"><i class="fa fa-stack"></i> Icon</a>
+                    </div> <!--sub-menu-->
+
+                    <input type="checkbox" id="hd-6" class="hide"/>
+                    <label for="hd-6" ><i class="fa fa-envelope-o"></i> Widgets</label>
+
+                    <input type="checkbox" id="hd-7" class="hide"/>
+                    <label for="hd-7" ><i class=" fa fa-bar-chart"></i> Charts</label>
+                    <div class="sub-menu">
+                        <a class="nav--link" href="#"><i class="fa fa-line-chart"></i> Chart JS</a>
+                        <a class="nav--link" href="#"><i class="fa fa-area-chart"></i> Float Chart</a>
+                        <a class="nav--link" href="#"><i class="fa fa-pie-chart"></i> Peity Chart</a>
+                    </div> <!--sub-menu-->
+
+                    <input type="checkbox" id="hd-8" class="hide"/>
+                    <label for="hd-8" ><i class=" fa fa-area-chart"></i> Maps </label>
+                    <div class="sub-menu">
+                        <a class="nav--link" href="#"><i class="fa fa-map-o"></i> Google Maps</a>
+                        <a class="nav--link" href="#"><i class=" fa fa-map-marker"></i> Vector Maps</a>
+                    </div> <!--sub-menu-->
+
+                    <div class="sub-menu--title">
+                        Exrtas
+                    </div>
+
+                    <input type="checkbox" id="hd-9" class="hide"/>
+                    <label for="hd-9" ><i class=" fa fa-glass"></i> Pages </label>
+                    <div class="sub-menu">
+                        <a class="nav--link" href="#"><i class="fa fa-unlock"></i> Login</a>
+                        <a class="nav--link" href="#"><i class="fa fa-sign-in"></i> Register</a>
+                        <a class="nav--link" href="#"><i class="fa fa-lock"></i> Forget Password</a>
+                    </div> <!--sub-menu-->
+                </div> <!--demo-->
+            </nav> <!--nav-bar-->
+        </div> <!--/nav-burger-->
+
+
+        <nav class="nav">
+            <a  class="nav-item" href="#" target="_blank">
+                <svg class="icons-icon">
+                    <use xlink:href="#search"></use>
+                </svg>
+            </a>
+            <a  class="nav-item" href="#"  target="_blank">
+                <svg class="nav-icon">
+                    <use xlink:href="#notice" >
+                        <span class="icon--red">3</span>
+                    </use>
+                </svg>
+            </a>
+            <a  class="nav-item" href="#"  target="_blank">
+                <svg class="nav-icon">
+                    <use xlink:href="#massage">
+                        <span class="icon--blue">4</span>
+                    </use>
+                </svg>
+            </a>
+            <a class="nav-item nav-admin" href="#">
+                <img src="images/admin.jpg" class="admin-img">
+            </a>
+
+            <div class="nav-bar nav-bar--admin">
+                <ul class="menu">
+                    <li><a class="nav--link" href="#">My Profile</a></li>
+                    <li><a class="nav--link" href="#">Notifications</a></li>
+                    <li><a class="nav--link" href="#"> Settings</a></li>
+                    <li><a class="nav--link" href="#">Logout</a></li>
+                </ul>
+            </div> <!--nav-bar nav-bar--admin-->
+        </nav> <!--nav-->
+    </header>
+            <div class="content-wr">
+                 <div class="content">
+                     <div class="row">
+                         <div class="column">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="cell-content">
+                                         <div class="cell-content--icon color-1">
+                                            <i class="fa fa-money"></i>
+                                         </div> <!--cell-content--icon-->
+
+                                         <div class="cell-content--right">
+                                             <div class="right--number">
+                                            $ 23569
+                                             </div> <!--cell-right--number-->
+                                            <div class="right--text">
+                                             Revenue
+                                             </div> <!--cell-right--text-->
+                                         </div><!--cell-right-->
+                                     </div> <!--cell-content-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+
+                         <div class="column">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="cell-content">
+                                         <div class="cell-content--icon color-2">
+                                             <i class="fa fa-shopping-cart"></i>
+                                         </div> <!--cell-icon-->
+
+                                         <div class="cell-content--right">
+                                             <div class="right--number">
+                                                 3435
+                                             </div> <!--cell-right--number-->
+                                             <div class="right--text">
+                                                 Sales
+                                             </div> <!--cell-right--text-->
+                                         </div><!--cell-right-->
+                                     </div> <!--cell-content-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+
+                         </div> <!--column-->
+
+                         <div class="column">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="cell-content">
+                                         <div class="cell-content--icon color-3">
+                                             <i class="fa fa-window-maximize"></i>
+                                         </div> <!--cell-icon-->
+
+                                         <div class="cell-content--right">
+                                             <div class="right--number">
+                                                 349
+                                             </div> <!--cell-right--number-->
+                                             <div class="right--text">
+                                                 Templates
+                                             </div> <!--cell-right--text-->
+                                         </div><!--cell-right-->
+                                     </div> <!--cell-content-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+
+                         </div> <!--column-->
+
+                         <div class="column cl-1">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="cell-content">
+                                         <div class="cell-content--icon color-4">
+                                             <i class="fa fa-user"></i>
+                                         </div> <!--cell-icon-->
+
+                                         <div class="cell-content--right">
+                                             <div class="right--number">
+                                                 2986
+                                             </div> <!--cell-right--number-->
+                                             <div class="right--text">
+                                                 Clients
+                                             </div> <!--cell-right--text-->
+                                         </div><!--cell-right-->
+                                     </div> <!--cell-content-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+                     </div><!--row-->
+
+                     <div class="row">
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                    <div class="traffic">
+                                        Traffic
+                                    </div>
+                                     <div class="graph">
+                                         <div class="graph-img">
+                                             <!--<img src="http://placehold.it/200">-->
+                                         </div><!--graph-img-->
+
+                                         <div class="statistics">
+                                             <div class="statistics-item">
+                                                <div class="title">Visits</div>
+                                                <div class="percent">96,930 Users (40%)</div>
+                                                 <div class="statistics-line">
+                                                     <div class="line-col--1"></div>
+                                                 </div> <!--statistics-line-->
+                                             </div> <!--statistics-item-->
+
+                                             <div class="statistics-item">
+                                                 <div class="title">Bounce Rate</div>
+                                                 <div class="percent">3,220 Users (24%)</div>
+                                                 <div class="statistics-line">
+                                                     <div class="line-col--2"></div>
+                                                 </div> <!--statistics-line-->
+                                             </div> <!--statistics-item-->
+
+                                             <div class="statistics-item">
+                                                 <div class="title">Unique Visitors</div>
+                                                 <div class="percent">29,658 Users (60%)</div>
+                                                 <div class="statistics-line">
+                                                     <div class="line-col--3"></div>
+                                                 </div> <!--statistics-line-->
+                                             </div> <!--statistics-item-->
+
+                                             <div class="statistics-item">
+                                                 <div class="title">Targeted Visitors)</div>
+                                                 <div class="percent">99,658 Users (90%)</div>
+                                                 <div class="statistics-line">
+                                                     <div class="line-col--4"></div>
+                                                 </div> <!--statistics-line-->
+                                             </div> <!--statistics-item-->
+                                        </div> <!--statistics-->
+                                     </div> <!--graph-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+                     </div> <!--row-->
+
+                     <div class="row">
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="orders-clients">
+                                         <div class="orders-clients--title">
+                                             orders
+                                         </div> <!--orders-clients--title-->
+
+                                         <div class="orders-clients--subtitle">
+                                             <div class="clients-text">#</div>
+                                             <div class="clients-text">avatar</div>
+                                             <div class="clients-text">id</div>
+                                             <div class="clients-text">name</div>
+                                             <div class="clients-text">PRODUCT</div>
+                                             <div class="clients-text">QUANTITY</div>
+                                             <div class="clients-text">STATUS</div>
+                                         </div> <!--orders-clients--subtitle-->
+
+                                         <div class="orders-clients--content">
+                                             <div class="clients-text con-text">1.</div>
+                                             <div class="clients-text">
+                                                 <img class="content-avatar" src="http://placehold.it/40">
+                                             </div>
+                                             <div class="clients-text">#5469</div>
+                                             <div class="clients-text con-text">Louis Stanley</div>
+                                             <div class="clients-text con-text">IMax</div>
+                                             <div class="clients-text con-text">231</div>
+                                             <div class="clients-text con-text column-col-1">
+                                                 COMPLETE
+                                             </div>
+                                         </div> <!--orders-clients--content-->
+                                         <div class="orders-clients--content">
+                                             <div class="clients-text con-text">2.</div>
+                                             <div class="clients-text">
+                                                 <img class="content-avatar" src="http://placehold.it/40">
+                                             </div>
+                                             <div class="clients-text">#5468</div>
+                                             <div class="clients-text con-text">Gregory Dixon</div>
+                                             <div class="clients-text con-text">IPad</div>
+                                             <div class="clients-text con-text">250</div>
+                                             <div class="clients-text con-text column-col-1">
+                                                 COMPLETE
+                                             </div>
+                                         </div> <!--orders-clients--content-->
+                                         <div class="orders-clients--content">
+                                             <div class="clients-text con-text">3.</div>
+                                             <div class="clients-text">
+                                                 <img class="content-avatar" src="http://placehold.it/40">
+                                             </div>
+                                             <div class="clients-text">#5467</div>
+                                             <div class="clients-text con-text">Catherine Dixon</div>
+                                             <div class="clients-text con-text">SSD</div>
+                                             <div class="clients-text con-text">250</div>
+                                             <div class="clients-text con-text column-col-1">
+                                                 COMPLETE
+                                             </div>
+                                         </div> <!--orders-clients--content-->
+                                         <div class="orders-clients--content">
+                                             <div class="clients-text con-text">4.</div>
+                                             <div class="clients-text">
+                                                 <img class="content-avatar" src="http://placehold.it/40">
+                                             </div>
+                                             <div class="clients-text">#5466</div>
+                                             <div class="clients-text con-text">Mary Silva</div>
+                                             <div class="clients-text con-text">Magic Mouse</div>
+                                             <div class="clients-text con-text">250</div>
+                                             <div class="clients-text con-text column-col-2">
+                                                 PENDING
+                                             </div>
+                                         </div> <!--orders-clients--content-->
+
+                                         <div class="orders-clients--content">
+                                             <div class="clients-text con-text">5.</div>
+                                             <div class="clients-text">
+                                                 <img class="content-avatar" src="http://placehold.it/40">
+                                             </div>
+                                             <div class="clients-text">#5465</div>
+                                             <div class="clients-text con-text">Johnny Stephens</div>
+                                             <div class="clients-text con-text">Monitor</div>
+                                             <div class="clients-text con-text">250</div>
+                                             <div class="clients-text con-text column-col-1">
+                                                 COMPLETE
+                                             </div>
+                                         </div> <!--orders-clients--content-->
+                                     </div> <!--orders-clients-->
+
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+
+                                 <div class="row-3-item">
+                                     <div class="column ">
+                                         <div class="block">
+                                             <div class="cell">
+                                                 <div class="orders-visit">
+                                                     <div class="orders-visit--graf">
+                                                         <img src="http://placehold.it/100">
+                                                     </div> <!--orders-visit--graf-->
+                                                     <div class="orders-visit--stat">
+                                                         <div class="stat">
+                                                             <div class="stat-col col--1"> blue</div>
+                                                             <div class="stat-text">Desktop visit</div>
+                                                         </div> <!--stat -->
+                                                         <div class="stat">
+                                                             <div class="stat-col col--2"> red</div>
+                                                             <div class="stat-text">Tab visits</div>
+                                                         </div> <!--stat-->
+                                                         <div class="stat">
+                                                             <div class="stat-col col--3"> green</div>
+                                                             <div class="stat-text">Mobile visits</div>
+                                                         </div>
+                                                     </div> <!--orders-visit--stat-->
+                                                 </div>  <!--orders-visit-->
+                                            </div> <!--cell-->
+                                        </div> <!--block-->
+                                     </div> <!--column -->
+                                     <div class="column  column-col">
+                                         <div class="block">
+                                             <div class="cell">
+                                                 <div class="orders-curve">
+                                                     <div class="orders-curve--text">
+                                                             August 2018
+                                                     </div>
+                                                     <div class="orders-curve--graf">
+                                                             <img src="http://placehold.it/100">
+                                                     </div>
+                                                 </div>  <!--orders-curve-->
+                                             </div> <!--cell-->
+                                         </div> <!--block-->
+                                     </div> <!--column -->
+                                 </div> <!--row-3-item-->
+                            </div>
+
+
+
+
+
+
+                 </div > <!--row-->
+
+                     <div class="row">
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="planer">
+                                         <div class="planer-body">
+                                             <div class="planer-title">
+                                                 To Do List
+                                             </div>
+                                             <div class="planer-content">
+
+                                                 <div class="checkbox">
+                                                     <i class="fa fa-th-large"></i>
+                                                     <input class="custom-checkbox" type="checkbox" id="check-1" />
+                                                     <label for="check-1">Conveniently fabricate interactive technology for<br><br> ...</label>
+                                                 </div>
+
+                                                 <div class="planer-content--icon">
+                                                     <i class="fa fa-check"></i>
+                                                     <i class="fa fa-pencil"></i>
+                                                     <i class="fa fa-times" ></i>
+                                                 </div> <!--planer-content&#45;&#45;icon-->
+                                             </div><!--planer-content-->
+
+                                             <div class="planer-content">
+
+                                                 <div class="checkbox">
+                                                     <i class="fa fa-th-large"></i>
+                                                     <input class="custom-checkbox" type="checkbox" id="check-2" />
+                                                     <label for="check-2">Creating component page</label>
+                                                 </div>
+
+                                                 <div class="planer-content--icon">
+                                                     <i class="fa fa-check"></i>
+                                                     <i class="fa fa-pencil"></i>
+                                                     <i class="fa fa-times" ></i>
+                                                 </div> <!--planer-content&#45;&#45;icon-->
+                                             </div><!--planer-content-->
+
+                                             <div class="planer-content">
+
+                                                 <div class="checkbox">
+                                                     <i class="fa fa-th-large"></i>
+                                                     <input class="custom-checkbox" type="checkbox" id="check-3" />
+                                                     <label for="check-3">Follow back those who follow you</label>
+                                                 </div>
+
+                                                 <div class="planer-content--icon">
+                                                     <i class="fa fa-check"></i>
+                                                     <i class="fa fa-pencil"></i>
+                                                     <i class="fa fa-times" ></i>
+                                                 </div> <!--planer-content&#45;&#45;icon-->
+                                             </div><!--planer-content-->
+
+                                             <div class="planer-content">
+
+                                                 <div class="checkbox">
+                                                     <i class="fa fa-th-large"></i>
+                                                     <input class="custom-checkbox" type="checkbox" id="check-4" />
+                                                     <label for="check-4">Design One page theme</label>
+                                                 </div>
+
+                                                 <div class="planer-content--icon">
+                                                     <i class="fa fa-check"></i>
+                                                     <i class="fa fa-pencil"></i>
+                                                     <i class="fa fa-times" ></i>
+                                                 </div> <!--planer-content&#45;&#45;icon-->
+                                             </div><!--planer-content-->
+
+                                             <div class="planer-content">
+
+                                                 <div class="checkbox">
+                                                     <i class="fa fa-th-large"></i>
+                                                     <input class="custom-checkbox" type="checkbox" id="check-5" />
+                                                     <label for="check-5">Creating component page</label>
+                                                 </div>
+
+                                                 <div class="planer-content--icon">
+                                                     <i class="fa fa-check"></i>
+                                                     <i class="fa fa-pencil"></i>
+                                                     <i class="fa fa-times" ></i>
+                                                 </div> <!--planer-content&#45;&#45;icon-->
+                                             </div><!--planer-content-->
+                                         </div> <!--planer-body-->
+                                     </div> <!--planer-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="chat">
+                                         <div class="planer-title">
+                                             To Do List
+                                         </div>
+
+                                         <div class="user">
+                                             <div class="avatar">
+                                                 <img class="admin-img" src="http://placehold.it/40">
+                                             </div>
+                                             <div class="column column-col-3 ">
+                                                 <div class="block">
+                                                     <div class="cell">
+                                                         <div class="user-name">
+                                                             John Doe
+                                                         </div>
+                                                         <div class="user-text">
+                                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                             Perspiciatis sunt placeat velit ad reiciendis ipsam
+                                                         </div> <!--user-text-->
+                                                     </div> <!--cell-->
+                                                 </div> <!--block-->
+                                             </div> <!--column-->
+                                         </div> <!--user-->
+                                         <div class="user">
+                                             <div class="column column-col-3 ">
+                                                 <div class="block">
+                                                     <div class="cell">
+                                                         <div class="user-name">
+                                                             John Doe
+                                                         </div>
+                                                         <div class="user-text">
+                                                             Hay how are you doing?
+                                                         </div> <!--user-text-->
+                                                     </div> <!--cell-->
+                                                 </div> <!--block-->
+                                             </div> <!--column-->
+                                             <div class="avatar">
+                                                 <img class="admin-img" src="http://placehold.it/40">
+                                             </div> <!--avatar-->
+                                         </div> <!--user-->
+                                         <div class="messeg">
+                                             <div class="input">
+                                                 input
+                                             </div> <!--input-->
+
+                                             <div class="send">
+                                                 <i class="fa fa-paper-plane-o"></i>
+                                             </div> <!--send-->
+                                         </div> <!--messeg-->
+                                     </div> <!--chat-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+                     </div> <!--row-->
+
+                     <div class="row">
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="calendar">
+                                         <form class="cal">
+                                               <p><label>
+                                                   <input type="date" name="calendar" value="2017-06-01"
+                                                          max="2030-12-1" min="2010-05-29">
+                                               </label>
+
+                                                   <input type="submit" value="Отправить"></p>
+                                         </form>
+                                     </div> <!--calendar-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="diagram">
+
+
+                                     </div> <!--diagram-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="weather">
+                                         <div class="planer-title">
+                                         Weather
+                                         </div>
+                                     </div> <!--weather-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+                     </div> <!--row-->
+
+                     <div class="row">
+                         <div class="column ">
+                             <div class="block">
+                                 <div class="cell">
+                                     <div class="footer">
+                                         <div class="footer-1">
+                                             Copyright © 2018 Ela Admin
+                                         </div>
+                                         <div class="footer-2">
+                                             Designed by Colorlib
+                                         </div>
+                                     </div> <!--footer-->
+                                 </div> <!--cell-->
+                             </div> <!--block-->
+                         </div> <!--column-->
+                     </div> <!--row-->
+                 </div > <!--content-->
+            </div > <!--content-wr-->
+</div > <!--wrapper-->
+</body>
+</html>
+
+
+
+
+
+
